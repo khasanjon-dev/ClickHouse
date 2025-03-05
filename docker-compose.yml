@@ -1,22 +1,14 @@
-version: '3.8'
-
 services:
   clickhouse:
-    image: clickhouse/clickhouse-server:latest
-    container_name: clickhouse-server
-    environment:
-      - CLICKHOUSE_DB=default
-      - CLICKHOUSE_USER=default
-      - CLICKHOUSE_PASSWORD=default
-    ports:
-      - "9000:9000"  # ClickHouse client port
-      - "8123:8123"  # HTTP interface
+    image: clickhouse/clickhouse-server:25.1
+    container_name: clickhouse_data_war_house
     volumes:
       - clickhouse_data:/var/lib/clickhouse
-    restart: always
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - ./compose/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
+      - ./compose/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
+    ports:
+      - "8125:8123"
+
 
 volumes:
   clickhouse_data:
-    driver: local
