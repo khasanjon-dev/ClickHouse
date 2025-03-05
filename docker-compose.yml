@@ -4,6 +4,7 @@ services:
     container_name: clickhouse_data_war_house
     volumes:
       - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
       - ./compose/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
       - ./compose/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
     ports:
@@ -12,3 +13,4 @@ services:
 
 volumes:
   clickhouse_data:
+  clickhouse_logs:

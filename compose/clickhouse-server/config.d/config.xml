@@ -21,17 +21,4 @@
     <distributed_ddl>
         <path>/clickhouse/task_queue/ddl</path>
     </distributed_ddl>
-    <storage_configuration>
-        <disks>
-            <backups>
-                <type>local</type>
-                <path>/var/lib/clickhouse/</path>
-            </backups>
-        </disks>
-    </storage_configuration>
-    <backups>
-        <allowed_disk>backups</allowed_disk>
-        <allowed_path>/var/lib/clickhouse/</allowed_path>
-    </backups>
-
 </clickhouse>

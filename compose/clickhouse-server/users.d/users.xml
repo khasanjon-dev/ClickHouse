@@ -36,3 +36,5 @@
         </default>
     </quotas>
 </clickhouse>
+
+RESTORE database arm_fs_database TO Disk('backups', 'arm_fs_database_28022025.zip')
