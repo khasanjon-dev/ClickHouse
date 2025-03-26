@@ -1,7 +1,7 @@
 services:
   clickhouse:
     image: clickhouse/clickhouse-server:25.1
-    container_name: clickhouse_data_war_house
+    container_name: clickhouse
     volumes:
       - clickhouse_data:/var/lib/clickhouse
       - clickhouse_logs:/var/log/clickhouse-server
