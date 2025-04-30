@@ -9,6 +9,10 @@ services:
       - ./compose/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
     ports:
       - "8125:8123"
+      - "9000:9000"
+      - "9009:9009"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 
 volumes:
