@@ -1,18 +1,15 @@
 services:
   clickhouse:
     image: clickhouse/clickhouse-server:25.1
-    container_name: clickhouse
+    container_name: clickhouse_base
     volumes:
       - clickhouse_data:/var/lib/clickhouse
       - clickhouse_logs:/var/log/clickhouse-server
       - ./compose/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
       - ./compose/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
     ports:
-      - "8125:8123"
+      - "8123:8123"
       - "9000:9000"
-      - "9009:9009"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
 
 volumes:
