@@ -9,3 +9,7 @@ down:
 
 down_v:
 	docker compose down -v
+
+reload:
+	make down_v
+	make up
